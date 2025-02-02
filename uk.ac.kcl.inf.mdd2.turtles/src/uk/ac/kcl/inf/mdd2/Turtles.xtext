@@ -47,7 +47,7 @@ Addition returns IntExpression:
 ;
 
 Multiplication returns IntExpression:
-    PrimaryExpression (Multiplication.left = current '*' right+=PrimaryExpression)
+    PrimaryExpression ({Multiplication.left = current} '*' right+=PrimaryExpression)
 ;
 
 PrimaryExpression returns IntExpression:
