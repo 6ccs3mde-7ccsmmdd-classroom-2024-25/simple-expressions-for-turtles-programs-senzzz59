@@ -51,11 +51,18 @@ Multiplication returns IntExpression:
 ;
 
 PrimaryExpression returns IntExpression:
-	val = INT |
-	var = [VariableDeclaration] |
+	IntLiteral |
+	IntVarExpression |
 	'(' Addition ')'
 ;
 
+IntLiteral:
+    val = INT
+;
+
+IntVarExpression:
+    var = [VariableDeclaration]
+;
 
 REAL returns ecore::EFloat hidden():
 	INT? "." INT
