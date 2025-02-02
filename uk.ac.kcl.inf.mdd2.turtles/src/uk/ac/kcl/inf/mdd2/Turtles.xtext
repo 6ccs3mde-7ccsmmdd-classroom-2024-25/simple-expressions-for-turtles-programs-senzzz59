@@ -42,13 +42,12 @@ enum TurnCommand:
 	left | right
 ;
 
-
 Addition returns IntExpression:
-    Multiplication ({Addition.left=current} '+' right+= Multiplication)*
+    Multiplication ({Addition.left = current} '+' right += Multiplication)*
 ;
 
 Multiplication returns IntExpression:
-    PrimaryExpression (Multiplication.left=current '*' right+=PrimaryExpression)
+    PrimaryExpression (Multiplication.left = current '*' right+=PrimaryExpression)
 ;
 
 PrimaryExpression returns IntExpression:
